@@ -1,0 +1,28 @@
+<div>
+	<h1>users</h1>
+	<a href="/">add users</a>
+	<table border="2px solid black">
+		<thead>
+			<th>id</th>
+			<th>name</th>
+			<th>email</th>
+			<th>phno</th>
+			<th>Actions</th>
+			
+		</thead>
+		<tbody>
+			<tr th:each="list : ${list}">
+			   <td th:text="${list.id}"></td>
+			   <td th:text="${list.name}"></td>
+			   <td th:text="${list.email}"></td>
+			   <td th:text="${list.phno}"></td>
+			   <td >
+		<a th:href="@{/edit(id=${list.id})}">edit</a>
+			<a th:href="@{/delete(id=${list.id})}">Delete</a>
+			   </td>
+			</tr>
+		</tbody>
+		
+	</table>
+	
+</div>
