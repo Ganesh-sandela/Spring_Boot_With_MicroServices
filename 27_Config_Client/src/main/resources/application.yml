@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: welcome-sit
+  config:
+    import: optional:configserver:http://localhost:1010
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh,health,info
