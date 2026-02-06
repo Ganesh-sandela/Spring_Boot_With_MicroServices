@@ -1,0 +1,16 @@
+
+
+<div>
+	<h1> Login Here</h1>
+	<p th:text="${emsg}"></p>
+	 <form th:action="@{/login}" th:object="${user}" method="post">
+		
+		email:<input name="email" type="email" th:field="*{email}"  required> <br> <br>
+		email:<input name="password" type="password" th:field="*{password}" required> <br> <br>
+		
+		<input type="submit" value="login" >
+		
+		
+	 </form>
+	
+</div>
