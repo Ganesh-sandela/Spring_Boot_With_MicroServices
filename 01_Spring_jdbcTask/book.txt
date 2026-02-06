@@ -1,0 +1,4 @@
+1,python,1000.0
+2,css	,2000.0
+3,html,3000.0
+4,javascript,4000.0
