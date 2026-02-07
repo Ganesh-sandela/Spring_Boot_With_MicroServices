@@ -1,0 +1,43 @@
+spring:
+  application:
+    name: 28_Circuit_Breaker
+
+# =========================
+# Spring Boot Actuator + Resilience4j Configuration
+# =========================
+
+# Management (Actuator) configuration
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'           # Expose all endpoints (health, info, metrics, etc.)
+  endpoint:
+    health:
+      show-details: always      # Show full health details
+  health:
+    circuitbreakers:
+      enabled: true             # Enable circuit breaker health indicator
+
+# Resilience4j Circuit Breaker default configuration
+resilience4j:
+  circuitbreaker:
+    configs:
+      default:
+        registerHealthIndicator: true                  # Register CB with Spring Boot health
+        slidingWindowSize: 10                          # Number of calls to evaluate failure rate
+        minimumNumberOfCalls: 5                        # Minimum calls before CB can open
+        permittedNumberOfCallsInHalfOpenState: 3      # Test calls in HALF_OPEN state
+        automaticTransitionFromOpenToHalfOpenEnabled: true  # Auto move from OPEN → HALF_OPEN
+        waitDurationInOpenState: 10s                 # Duration CB stays OPEN
+        failureRateThreshold: 50                      # Failure rate % to trigger OPEN
+
+# Example: custom circuit breaker instance (optional)
+# cb-example:
+#   registerHealthIndicator: true
+#   slidingWindowSize: 20
+#   minimumNumberOfCalls: 10
+#   failureRateThreshold: 40
+#   waitDurationInOpenState: 60s
+#   permittedNumberOfCallsInHalfOpenState: 5
+#   automaticTransitionFromOpenToHalfOpenEnabled: true
