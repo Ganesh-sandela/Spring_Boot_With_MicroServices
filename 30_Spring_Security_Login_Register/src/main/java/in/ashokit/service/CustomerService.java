@@ -36,7 +36,17 @@ public class CustomerService implements UserDetailsService {
 	public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
 		
 		Customer c = crepo.findByEmail(email);
-		return  new User(c.getEmail(), c.getPwd(),Collections.EMPTY_LIST);
+//		return  new User(c.getEmail(), c.getPwd(),Collections.EMPTY_LIST);
+		
+		 if (c == null) {
+		        throw new UsernameNotFoundException("User not found");
+		    }
+
+		    return new User(
+		            c.getEmail(),
+		            c.getPwd(),
+		            Collections.emptyList()
+		    );
 	}
 	
 	

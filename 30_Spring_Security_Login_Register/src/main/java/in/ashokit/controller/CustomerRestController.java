@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import in.ashokit.entity.Customer;
 import in.ashokit.repo.CustomerRepo;
 import in.ashokit.service.CustomerService;
+import in.ashokit.service.JwtService;
 
 @RestController
 public class CustomerRestController {
@@ -27,6 +28,9 @@ public class CustomerRestController {
 
 	@Autowired
 	private CustomerService cserv;
+	
+	@Autowired
+	private JwtService jwtService;
 
 
     CustomerRestController(CustomerRepo customerRepo, SecurityFilterChain security) {
@@ -35,22 +39,24 @@ public class CustomerRestController {
     }
 
 	
-	@PostMapping("/login")
-	public ResponseEntity<String> login(@RequestBody Customer c){
-		UsernamePasswordAuthenticationToken token = 
-				new UsernamePasswordAuthenticationToken(c.getEmail(), c.getPwd());
-		//verify login details valid or not
-		  Authentication authenticate = authmanager.authenticate(token);
-		  
-		  boolean status = authenticate.isAuthenticated();
-		 if (status) {
-			return new ResponseEntity<String>("succes",HttpStatus.OK);
-		}
-		 else {
-			 return new ResponseEntity<String>("failed",HttpStatus.BAD_REQUEST);
-		 }
-	}
-   
+    @PostMapping("/login")
+    public ResponseEntity<String> login(@RequestBody Customer c) {
+
+        UsernamePasswordAuthenticationToken token =
+                new UsernamePasswordAuthenticationToken(c.getEmail(), c.getPwd());
+
+        Authentication authenticate = authmanager.authenticate(token);
+
+        if (authenticate.isAuthenticated()) {
+
+            String jwt = jwtService.generateToken(c.getEmail());
+
+            return ResponseEntity.ok(jwt);  // send token
+        }
+
+        return ResponseEntity.badRequest().body("Invalid credentials");
+    }
+
 	
 	@PostMapping("/register")
 	public ResponseEntity<String> register(@RequestBody Customer c){
@@ -62,6 +68,10 @@ public class CustomerRestController {
 		else {
 			return new  ResponseEntity<String>("Failure",HttpStatus.INTERNAL_SERVER_ERROR);
 		}
-		
+	}
+	
+	@GetMapping("/welcome")
+	public ResponseEntity<String> getwelcome(){
+		return new ResponseEntity<String>("welcome to the page succesfully logged in...",HttpStatus.OK);
 	}
 }
