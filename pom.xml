@@ -6,7 +6,7 @@
 
   <groupId>com.jsp.employee</groupId>
   <artifactId>SERVLETJDBCPROJECT</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>0.0.1-REALSE</version>
   <packaging>war</packaging>
 
   <name>SERVLETJDBCPROJECT Maven Webapp</name>
