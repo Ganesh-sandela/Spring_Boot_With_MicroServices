@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;in.ashokit.user&apos; to &apos;in.ashokit.Entity&apos;&#x0D;&#x0A;- Original project: &apos;05_DataJPASpring_Oops&apos;&#x0D;&#x0A;- Original element: &apos;05_DataJPASpring_Oops/src/main/java/in.ashokit.user&apos;&#x0D;&#x0A;- Renamed element: &apos;05_DataJPASpring_Oops/src/main/java/in.ashokit.Entity&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;in.ashokit.user&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;in.ashokit.user" name="in.ashokit.Entity" qualified="false" references="true" stamp="1769275934391" textual="false" version="1.0"/>
+</session>

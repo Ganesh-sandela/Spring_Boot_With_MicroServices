@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: 32_OAUTH_GOOGLE_Spring_Security_-1
+  security:
+      oauth2:
+        client:
+          registration:
+            Google:
+              client-id: 325387592522-7rub4armk47obh9e8bub1oqa91simb06.apps.googleusercontent.com
+              client-secret: GOCSPX-jpFq0fLNwYRCLp-
+

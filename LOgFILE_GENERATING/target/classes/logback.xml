@@ -1,0 +1,38 @@
+<configuration>
+
+    <!-- Time Based Rolling File Appender -->
+    <appender name="ROLLING"
+        class="ch.qos.logback.core.rolling.RollingFileAppender">
+
+        <!-- Current log file -->
+        <file>logs/application.log</file>
+
+        <!-- Time Based Rolling Policy -->
+        <rollingPolicy
+            class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+
+            <!-- Create new file every day -->
+            <fileNamePattern>
+                logs/application.%d{yyyy-MM-dd}.log
+            </fileNamePattern>
+
+            <!-- Keep logs for 30 days -->
+            <maxHistory>30</maxHistory>
+
+        </rollingPolicy>
+
+        <!-- Log Format -->
+        <encoder>
+            <pattern>
+                %d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger - %msg%n
+            </pattern>
+        </encoder>
+
+    </appender>
+
+    <!-- Root Logger -->
+    <root level="INFO">
+        <appender-ref ref="ROLLING"/>
+    </root>
+
+</configuration>

@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: Demo_Read_Properties
+app:
+  messages:
+    greet_msg: good morning
+    welcome_msg: Welcome to ashokit
+    login_error: Invalid Credentials
+    register_error: Registration Failed
+    register_success: Registration Successful
+    register_dup_email: Duplicate Email Found
+    book_create_success: Book Inserted Successfully
+    product_update_success: Product Updated Successfully
+    product_delete_success: Product Deleted Successfully

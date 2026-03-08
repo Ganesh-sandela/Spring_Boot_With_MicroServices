@@ -1,0 +1,18 @@
+package in.ashokit.controller;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import lombok.extern.log4j.Log4j2;
+
+@RestController
+@Log4j2
+public class TestController {
+
+	@GetMapping("/welcome")
+	public String welcome() {
+		log.info("welcome()  Started,,,,");
+		log.info("welcome()  ended,,,,");
+		return "Hi welcome to JMeter Test";
+	}
+}

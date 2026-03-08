@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Extract method &apos;private static void getWelcomeMsg()&apos; from &apos;in.ashokit.Application.main(...)&apos; to &apos;in.ashokit.Application&apos;&#x0D;&#x0A;- Original project: &apos;16_SB_CONSUMER_APP&apos;&#x0D;&#x0A;- Method name: &apos;getWelcomeMsg&apos;&#x0D;&#x0A;- Destination type: &apos;in.ashokit.Application&apos;&#x0D;&#x0A;- Declared visibility: &apos;private&apos;" comments="false" description="Extract method &apos;getWelcomeMsg&apos;" destination="0" exceptions="false" final="false" flags="786434" id="org.eclipse.jdt.ui.extract.method" input="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;in.ashokit{Application.java" name="getWelcomeMsg" replace="false" selection="399 270" stamp="1770037876919" synchronized="false" version="1.0" visibility="2"/>
+</session>

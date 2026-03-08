@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;01_Spring_jdbcTask/book.tx&apos; to &apos;book.txt&apos;" description="Rename resource &apos;book.tx&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="book.tx" name="book.txt" stamp="1768649232987" updateReferences="true"/>
+</session>
