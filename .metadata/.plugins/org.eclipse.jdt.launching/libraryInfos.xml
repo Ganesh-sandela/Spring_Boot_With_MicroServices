@@ -14,4 +14,5 @@
         </endorsedDirs>
     </libraryInfo>
     <libraryInfo home="C:\sts-5.0.1.RELEASE\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_25.0.1.v20251108-1451\jre" version="25.0.1"/>
+    <libraryInfo home="C:\Program Files\Java\jdk-17.0.12" version="17.0.12"/>
 </libraryInfos>
