@@ -1,7 +1,5 @@
-FROM: OpenJDK:17
+FROM openjdk:17
 MAINTAINER ganagani
-COPY target/14_SB_REST_API  /usr/app/
-WORKDIR usr/app
-ENTRYPOINT ["java","-jar","14_SB_REST_API.jar"]
-
-
+WORKDIR /usr/app
+COPY target/14_SB_REST_API-0.0.1-SNAPSHOT.jar app.jar
+ENTRYPOINT ["java","-jar","app.jar"]
